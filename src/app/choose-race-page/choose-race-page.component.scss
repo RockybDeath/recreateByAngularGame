@@ -1,0 +1,19 @@
+.race-items{
+    display: flex;
+    flex-wrap: wrap;
+}
+.header-container{
+    position: relative;
+    max-width: 1600px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    vertical-align: baseline;
+    height: 63px;
+    background-color: #170e09;
+    line-height: 63px;
+    text-align: center;
+}
+.text-center-header{
+    font-family: super;
+    font-size: 30px;
+}

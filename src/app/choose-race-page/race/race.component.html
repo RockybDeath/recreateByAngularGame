@@ -1,0 +1,10 @@
+<div class='race-item' [ngClass]="{'race-item-activeBlock':visableDescription}" >
+    <div class='race-img-block' (mouseenter)='visableDescription = true' (mouseleave)="visableDescription = false">
+        <img src='../../../assets/img/{{race.name}}.jpg'  class="race-item-img"/>
+    </div>
+    <div class="race-item-hover-block">
+        <p class='race-item-hover' [ngClass]="{'race-item-hover-activeBlock':visableDescription}">Hover on icon</p>
+        <p class='race-item-hover' [ngClass]="{'race-item-hover-activeBlock':!visableDescription}">{{race.name}}</p>
+    </div>
+    <p class='race-desc' [ngClass]="{'race-desc-activeBlock':visableDescription}">{{race.race_description}}</p>
+</div>

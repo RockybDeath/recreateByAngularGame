@@ -1,0 +1,6 @@
+<header class="header-container">
+    <p class="text-center-header">Select race</p>
+</header>
+<div class="race-items">
+    <app-race (click)='goToMapAndSave(race)' *ngFor="let race of races; let i = index" [race]='race' [index] = "i"></app-race>
+</div>

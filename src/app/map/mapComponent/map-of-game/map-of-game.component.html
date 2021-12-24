@@ -1,0 +1,83 @@
+<mat-sidenav-container>
+    <mat-sidenav mode="side" #sidenav>
+        <div class="leader_info_block" id="leader_info">
+            <div class="user-active__border">
+            <div class="user-active__top__block">
+              <span class="user-active__username">
+                Leader - {{currentStateOfSystem.race.leader.name}}
+              </span>
+            </div>
+            <table class="table table-dark">
+              <tbody>
+                <tr>
+                  <td class="userActive-table-column">Experience:</td>
+                  <td class="userActive-table-column">{{currentStateOfSystem.race.leader.experience}}</td>
+                </tr>
+                <!-- <tr>
+                  <td class="userActive-table-column">Race:</td>
+                  <td class="userActive-table-column">{{currentStateOfSystem.race.name}}</td>
+                </tr> -->
+                <tr>
+                  <td class="userActive-table-column">Power:</td>
+                  <td class="userActive-table-column">{{currentStateOfSystem.race.leader.char_id.intellect*2+currentStateOfSystem.race.leader.char_id.strength*1.5+currentStateOfSystem.race.leader.char_id.agillity*1.25}}</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="user-active__username">Army</p>
+            <table class="table table-dark" *ngIf="army">
+              <tbody>
+                <tr>
+                  <td class="userActive-table-column">Size:</td>
+                  <td class="userActive-table-column">{{army.size}}</td>
+                </tr>
+                <tr>
+                  <td class="userActive-table-column">Power:</td>
+                  <td class="userActive-table-column">{{army.power}}</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="user-active__username">Resources of race</p>
+            <table class="table table-dark" *ngIf="resources && allPower">
+              <tbody>
+                <tr>
+                  <td class="userActive-table-column">Wood:</td>
+                  <td class="userActive-table-column">{{resources.wood}}</td>
+                </tr>
+                <tr>
+                  <td class="userActive-table-column">Stones:</td>
+                  <td class="userActive-table-column">{{resources.stones}}</td>
+                </tr>
+                <tr>
+                  <td class="userActive-table-column">Gold:</td>
+                  <td class="userActive-table-column">{{resources.gold}}</td>
+                </tr>
+                <tr>
+                  <td class="userActive-table-column">Steel:</td>
+                  <td class="userActive-table-column">{{resources.steel}}</td>
+                </tr>
+                <tr>
+                  <td class="userActive-table-column">Food:</td>
+                  <td class="userActive-table-column">{{resources.food}}</td>
+                </tr>
+                <tr>
+                  <td class="userActive-table-column">AllPower:</td>
+                  <td class="userActive-table-column">{{allPower}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div>
+            <button mat-icon-button class="button-leader-info" (click)="sidenav.toggle()">
+                <mat-icon>
+                    menu
+                </mat-icon>
+            </button>
+            <div class="lands">
+                <app-lands *ngFor="let land of lands; let i = index" [popup]="popupIndex" [land]='land' [index] = "i" (popupChange)="onUpdatePopup($event)" [(currentId)]="currentStateOfSystem.currentLandId" [fractionName]="currentStateOfSystem.race.fraction.name" [raceName]="currentStateOfSystem.race.name"></app-lands>
+            </div>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

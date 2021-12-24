@@ -1,0 +1,39 @@
+.land-block-description{
+    text-align: center;
+}
+.land-block{
+    border: 3px solid black;
+    border-radius: 16px;
+    margin-top: 10px;
+    margin-left: 10px;
+    // width: 23%;
+    font-size: 20px;
+    height: 100px;
+    background-color: #635b5b;
+    line-height: 80px;
+    cursor: pointer;
+    word-break: break-word;
+    overflow: hidden;
+}
+.land-block-absolute{
+    position: absolute;
+    width: 250px;
+    height: 200px;
+}
+.land-block-sim{
+    background-color: #fd922d;
+}
+.land-block-current{
+    background-color: #49ee28
+}
+.land-block-move{
+    background-color: #2f4efc;
+}
+.land-block-attack{
+    background-color: #eb2a2a;
+}
+:host{
+    flex: 1;
+    max-width: 23%;
+    min-width: 23%;
+}
