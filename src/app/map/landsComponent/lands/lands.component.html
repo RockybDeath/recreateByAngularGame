@@ -1,10 +1,11 @@
 <div>
-    <div (click)="popupChange.emit(index)" class = 'land-block' [ngClass]="{'land-block-sim': sim, 'land-block-attack': attack, 'land-block-current': act, 'land-block-move': move}">
+    <div id = "popupWindow{{index}}" (click)="popupChange.emit(index)" class = 'land-block' [ngClass]="{'land-block-sim': sim, 'land-block-attack': attack, 'land-block-current': act, 'land-block-move': move}">
         <p onselectstart="return false" onmousedown="return false" class="land-block-description">{{land.name}}</p>
     </div>
-    <div [hidden]="popup !== index" class = "land-block land-block-absolute">
+    <div [hidden]="(popup !== index)" class = "land-block land-block-absolute" id = "popupWindowShow{{index}}">
         <button mat-raised-button color="primary" *ngIf="attack">Attack</button>
         <button mat-raised-button color="primary" (click)="changeCurrent()" *ngIf="move">Move</button>
+        <button mat-raised-button color="primary" (click)="addTerritoryToList.emit(land.name)">Save to list</button>
         <div *ngIf="act">
             <button mat-raised-button color="primary">Take garrison</button>
             <input type="number" [(ngModel)]="countGarrison"/>

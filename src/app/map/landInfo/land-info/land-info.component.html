@@ -1,0 +1,82 @@
+<div class="border-info" *ngIf= "land !== undefined">
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <mat-icon *ngIf="index !== 0"  (click)="removeTerritoryFromList.emit(land.name)">clear</mat-icon>
+                {{index === 0 ? "Current location:" : ""}} {{land.name}}
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+            <div class="user-active__border">
+              <table class="table table-dark">
+                <tbody>
+                  <tr>
+                    <td class="userActive-table-column">Race:</td>
+                    <td class="userActive-table-column">{{land.race.name}}</td>
+                  </tr>
+                  <tr>
+                    <td class="userActive-table-column">Size:</td>
+                    <td class="userActive-table-column">{{land.army.size}}</td>
+                  </tr>
+                  <tr>
+                    <td class="userActive-table-column">Power:</td>
+                    <td class="userActive-table-column">{{land.army.power}}</td>
+                  </tr>
+                  <tr>
+                    <td class="userActive-table-column">Wood:</td>
+                    <td class="userActive-table-column">{{land.resources.wood}}</td>
+                  </tr>
+                  <tr>
+                    <td class="userActive-table-column">Stones:</td>
+                    <td class="userActive-table-column">{{land.resources.stones}}</td>
+                  </tr>
+                  <tr>
+                    <td class="userActive-table-column">Gold:</td>
+                    <td class="userActive-table-column">{{land.resources.gold}}</td>
+                  </tr>
+                  <tr>
+                    <td class="userActive-table-column">Steel:</td>
+                    <td class="userActive-table-column">{{land.resources.steel}}</td>
+                  </tr>
+                  <tr>
+                    <td class="userActive-table-column">Food:</td>
+                    <td class="userActive-table-column">{{land.resources.food}}</td>
+                  </tr>
+                  <tr>
+                    <td class="userActive-table-column">Garrison:</td>
+                    <td class="userActive-table-column">{{land.army.size}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class = "user-active__border">
+              <table class="table table-dark">
+                <tbody>
+                <tr>
+                    <td class="userActive-table-column">Wood_mining:</td>
+                    <td class="userActive-table-column">{{land.resources.wood_mining}}</td>
+                  </tr>
+                  <tr>
+                    <td class="userActive-table-column">Stones_mining:</td>
+                    <td class="userActive-table-column">{{land.resources.stones_mining}}</td>
+                  </tr>
+                  <tr>
+                    <td class="userActive-table-column">Gold_mining:</td>
+                    <td class="userActive-table-column">{{land.resources.gold_mining}}</td>
+                  </tr>
+                  <tr>
+                    <td class="userActive-table-column">Steel_mining:</td>
+                    <td class="userActive-table-column">{{land.resources.steel_mining}}</td>
+                  </tr>
+                  <tr>
+                    <td class="userActive-table-column">Food_mining:</td>
+                    <td class="userActive-table-column">{{land.resources.food_mining}}</td>
+                  </tr>
+                  <tr>
+                    <td class="userActive-table-column">Garrison replenishment:</td>
+                    <td class="userActive-table-column">{{land.resources.garrison_replenishment}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+    </mat-expansion-panel>
+</div>

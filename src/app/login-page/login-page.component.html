@@ -1,5 +1,29 @@
+<header class="header-container">
+    <p class="text-center-header">World of warcraft. Conquers.</p>
+    <div class="header-block-account" *ngIf='beginAdventure'>
+        <p class="header-block-account-text">Account <mat-icon>account_circle</mat-icon></p>
+    </div>
+</header>
 <div>
-    <div class="button" (click)='goToMain()'>
+    <div *ngIf="!beginAdventure">
+    <mat-form-field appearance="fill">
+        <mat-label>Enter your username</mat-label>
+        <input matInput placeholder="Adadadad" [formControl]="username" required>
+        <mat-error *ngIf="username.invalid">{{getErrorMessageUsername()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Enter your email</mat-label>
+        <input matInput placeholder="pat@example.com" [formControl]="email" required>
+        <mat-error *ngIf="email.invalid">{{getErrorMessageEmail()}}</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="register()">
+        Login
+    </button>
+    <button mat-raised-button color="primary" (click)="sign()">
+        Sign in
+    </button>
+    </div>
+    <div class="button" (click)='goToMain()' *ngIf = "beginAdventure">
         <span>
             Begin adventure
         </span>

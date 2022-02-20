@@ -16,14 +16,22 @@ export class LandsComponent implements OnInit, OnChanges {
   index = 1;
 
   @Input()
+  currentId = 1;
+  @Output()
+  currentIdChange = new EventEmitter<number>()
+
+  @Input()
   popup: any
   @Output()
   popupChange = new EventEmitter<number>()
 
-  @Input()
-  currentId = 1;
   @Output()
-  currentIdChange = new EventEmitter<number>();
+  addTerritoryToList = new EventEmitter<string>()
+
+  @Input()
+  currentLandName = "dwdwd";
+  @Output()
+  currentLandNameChange = new EventEmitter<string>();
 
   @Input()
   raceName = ''
@@ -50,7 +58,7 @@ export class LandsComponent implements OnInit, OnChanges {
 
   setColor(){
     this.act = false;
-    if(this.index == this.currentId) this.act = true;
+    if(this.land.name == this.currentLandName) this.act = true;
     this.sim = false;
     if(this.raceName == this.land.race.name) this.sim = true;
     this.move = false;
@@ -60,8 +68,10 @@ export class LandsComponent implements OnInit, OnChanges {
   }
 
   changeCurrent(){
+    this.currentLandNameChange.emit(this.land.name);
     this.currentIdChange.emit(this.index);
-    this.popupChange.emit(this.index)
+    this.addTerritoryToList.emit(this.land.name);
+    this.popupChange.emit(this.index);
   }
 
 }

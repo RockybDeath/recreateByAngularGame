@@ -1,3 +1,6 @@
+$land-block-height: 100px;
+$land-block-abosulute-height: 200px;
+
 .land-block-description{
     text-align: center;
 }
@@ -8,7 +11,7 @@
     margin-left: 10px;
     // width: 23%;
     font-size: 20px;
-    height: 100px;
+    height: $land-block-height;
     background-color: #635b5b;
     line-height: 80px;
     cursor: pointer;
@@ -16,10 +19,12 @@
     overflow: hidden;
 }
 .land-block-absolute{
+    // display: block;
     position: absolute;
-    width: 250px;
-    height: 200px;
+    width: 200px;
+    height: $land-block-abosulute-height;
 }
+
 .land-block-sim{
     background-color: #fd922d;
 }
@@ -34,6 +39,6 @@
 }
 :host{
     flex: 1;
-    max-width: 23%;
-    min-width: 23%;
+    max-width: 33%;
+    min-width: 33%;
 }

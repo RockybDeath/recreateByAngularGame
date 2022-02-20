@@ -1,46 +1,3 @@
-.lands{
-    left: 10%;
-    width: 60%;
-    float: left;
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    overflow-block: auto;
-}
-.landInfo{
-    width: 28%;
-    top: 6px;
-    bottom: 0;
-    // float: right;
-    left: 71.5%;
-    position: fixed;
-    overflow: auto;
-    margin-right: 15px;
-}
-.button-skip-turn{
-    position: fixed;
-    bottom: 5%;
-    left: 2%;
-}
-.spinner{
-    position: fixed;
-    top: 45%;
-    left: 45%;
-}
-// .leader_info_block{
-//     position: fixed;
-//     width: 28%;
-//     top: 8%;
-//     bottom: 0;
-//     overflow: auto;
-//     left: 2%;
-// }
-.mat-drawer-inner-container::-webkit-scrollbar {
-    display: none;
-}
-.button-leader-info{
-    position: fixed;
-}
 .user-active_border{
     padding: 15px 15px;
     margin-top: 0px;
@@ -92,3 +49,11 @@
 .table-dark td, .table-dark th, .table-dark thead th {
     border-color: #454d55;
 }
+// .border-info{    
+//     width: 28%;
+//     top: 6px;
+//     bottom: 0;
+//     left: 71.5%;
+//     position: fixed;
+//     overflow: auto;
+// }

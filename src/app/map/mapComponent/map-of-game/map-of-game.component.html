@@ -1,5 +1,5 @@
 <mat-sidenav-container>
-    <mat-sidenav mode="side" #sidenav>
+    <mat-sidenav mode="side" #sidenav  [fixedInViewport]="true">
         <div class="leader_info_block" id="leader_info">
             <div class="user-active__border">
             <div class="user-active__top__block">
@@ -74,10 +74,18 @@
                 <mat-icon>
                     menu
                 </mat-icon>
+                Current info
+            </button>
+            <button mat-raised-button color="primary" class="button-skip-turn">
+              Skip turn
             </button>
             <div class="lands">
-                <app-lands *ngFor="let land of lands; let i = index" [popup]="popupIndex" [land]='land' [index] = "i" (popupChange)="onUpdatePopup($event)" [(currentId)]="currentStateOfSystem.currentLandId" [fractionName]="currentStateOfSystem.race.fraction.name" [raceName]="currentStateOfSystem.race.name"></app-lands>
+                <app-lands *ngFor="let land of lands; let i = index" (addTerritoryToList)="addTerritoryToList($event)" [popup]="popupIndex" [land]='land' [index] = "i" (popupChange)="onUpdatePopup($event)" [(currentLandName)]="currentStateOfSystem.currentLandName" [(currentId)] ="currentIdIndex" [fractionName]="currentStateOfSystem.race.fraction.name" [raceName]="currentStateOfSystem.race.name"></app-lands>
+            </div>
+            <div class="landInfo">
+              <app-land-info (removeTerritoryFromList)="removeTerritoryFromList($event)" *ngFor="let land of choseLands; let i = index" [land]='land' [index]= "i"></app-land-info>
             </div>
         </div>
-    </mat-sidenav-content>
+        <mat-spinner *ngIf = "loadingFromServer === true" color ="accent" class = "spinner"></mat-spinner>
+      </mat-sidenav-content>
 </mat-sidenav-container>

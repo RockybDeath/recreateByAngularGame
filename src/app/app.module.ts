@@ -5,7 +5,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button'
 import { MatIconModule } from '@angular/material/icon';
-import { FormsModule } from '@angular/forms';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +21,7 @@ import { MapOfGameComponent } from './map/mapComponent/map-of-game/map-of-game.c
 import { LandsComponent } from './map/landsComponent/lands/lands.component';
 import { RaceService } from './services/raceService/race.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LandInfoComponent } from './map/landInfo/land-info/land-info.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +31,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ChooseRacePageComponent,
     RaceComponent,
     MapOfGameComponent,
-    LandsComponent
+    LandsComponent,
+    LandInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +41,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     MatSidenavModule,
     MatButtonModule,
+    MatExpansionModule,
+    MatProgressSpinnerModule,
+    MatInputModule,
+    MatFormFieldModule,
     MatIconModule,
+    ReactiveFormsModule,
     FormsModule,
     CommonModule
   ],

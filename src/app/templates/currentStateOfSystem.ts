@@ -6,7 +6,8 @@ import { Race } from "./race";
 })
 export class CurrentStateOfSystem{
     race!: Race
-    currentLandId = 1
+    currentLandName = "adwda"
+    token = "dwdwd";
     
     constructor(){
         if (localStorage.getItem('currentStateOfSystem')) {

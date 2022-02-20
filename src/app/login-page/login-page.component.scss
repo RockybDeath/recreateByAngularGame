@@ -6,6 +6,35 @@
 .button span::after{
   transition: all ease .5s;
 }
+.header-container{
+  position: relative;
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  vertical-align: baseline;
+  height: 63px;
+  background-color: #170e09;
+  line-height: 63px;
+  text-align: center;
+}
+.header-block-account{
+  float: right;
+  border-left: 4px solid white;
+  top: 3%;
+  padding-right: 20px;
+  right: 3%;
+}
+.header-block-account{
+  padding-left: 10px;
+}
+.text-center-header{
+  position: fixed;
+  font-family: super;
+  left: 40%;
+  font-size: 30px;
+  display: inline-block;
+}
 .button{
   position: absolute;
   top: 40%;

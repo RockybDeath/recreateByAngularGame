@@ -20,7 +20,7 @@ export class MapService {
     headers = headers.set('Content-Type', 'application/json')
     headers = headers.set('Accept', 'application/json, text/plain, */*')
     headers = headers.set('Access-Control-Allow-Headers', 'Content-Type')
-    return this.http.post<number>(this.homeUrl + '/map/position', JSON.stringify({race: raceName}), {headers: headers});
+    return this.http.post<string>(this.homeUrl + '/map/position', JSON.stringify({race: raceName}), {headers: headers, responseType: "text" as 'json'});
   }
   
 }
